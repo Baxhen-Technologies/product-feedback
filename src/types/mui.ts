@@ -1,5 +1,11 @@
 import '@mui/material';
 
+interface PaletteGradient {
+  first: string;
+  second: string;
+  third: string;
+}
+
 declare module '@mui/material' {
   interface Theme {}
   interface ThemeOptions {}
@@ -9,10 +15,12 @@ declare module '@mui/material' {
   interface Palette {
     tertiary: Palette['primary'];
     quaternary: Palette['primary'];
+    gradient: PaletteGradient;
   }
   interface PaletteOptions {
     tertiary: PaletteOptions['primary'];
     quaternary: PaletteOptions['primary'];
+    gradient: PaletteGradient;
   }
 
   //** Button */
@@ -20,6 +28,7 @@ declare module '@mui/material' {
   interface ButtonPropsColorOverrides {
     tertiary: true;
     quaternary: true;
+    gradient: true;
   }
 
   interface ButtonPropsVariantOverrides {

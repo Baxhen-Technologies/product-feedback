@@ -1,36 +1,26 @@
 //@ts-ignore-page
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box, Button, ThemeProvider } from '@mui/material';
 import { theme } from './styles';
-import { ArrowBackIos } from '@mui/icons-material';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import Home from './pages/Home';
+import Header from './containers/Header';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box display="flex" gap="1rem" p="2rem">
-        <Button variant="contained" color="primary">
-          Button 1
-        </Button>
-        <Button variant="contained" color="secondary">
-          Button 2
-        </Button>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
 
-        <Button variant="contained" color="tertiary">
-          Button 3
-        </Button>
-        <Button variant="contained" color="quaternary">
-          Button 4
-        </Button>
-        <Button variant="link-outlined" startIcon={<ArrowBackIos />}>
-          Go Back
-        </Button>
-        <Button variant="link-contained" startIcon={<ArrowBackIos />}>
-          Go Back
-        </Button>
-      </Box>
-    </ThemeProvider>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

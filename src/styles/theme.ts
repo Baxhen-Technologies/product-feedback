@@ -3,6 +3,35 @@ import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
   components: {
+    MuiToggleButtonGroup: {
+      styleOverrides: {
+        root: { display: 'flex', flexWrap: 'wrap' },
+        grouped: {
+          '&:not(:last-of-type)': {
+            borderRadius: '10px',
+          },
+          '&:not(:first-of-type)': {
+            borderRadius: '10px',
+          },
+        },
+      },
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          width: 'auto',
+          padding: '10.5px 1rem',
+          borderRadius: '10px',
+          fontSize: '13px',
+          border: 'none',
+          backgroundColor: '#F2F4FF',
+          color: '#4661E6',
+        },
+        selected: {
+          color: 'white',
+        },
+      },
+    },
     MuiButton: {
       variants: [
         {
@@ -65,6 +94,11 @@ export const theme = createTheme({
       dark: '#E98888',
       main: '#D73737',
       contrastText: '#fff',
+    },
+    gradient: {
+      first: '#E84D70',
+      second: '#A337F6',
+      third: '#28A7ED',
     },
   },
 });

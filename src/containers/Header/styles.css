@@ -1,0 +1,17 @@
+.MuiDrawer-paper {
+  max-height: calc(100% - 4.5rem);
+}
+
+.MuiModal-root .MuiDrawer-root {
+  position: absolute;
+}
+
+.MuiToggleButtonGroup-root {
+  gap: 10px;
+}
+
+.Mui-selected {
+  background-color: #4661e6 !important;
+
+  color: white !important;
+}
