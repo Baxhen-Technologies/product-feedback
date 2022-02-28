@@ -14,6 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import AddIcon from '@mui/icons-material/Add';
 import Drawer from '../Drawer';
+import FilterSelect from '../../components/FilterSelect';
 
 interface Props {}
 
@@ -150,12 +151,30 @@ export const Header: React.FC<Props> = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box>
-            <label htmlFor="teste">Sort By : </label>
-            <select name="teste" id="" placeholder="Sort by"></select>
+          <Box width="149px">
+            <FilterSelect
+              label="Sort By :"
+              defaultValue={1}
+              options={[
+                { value: 1, label: 'Most Upvotes' },
+                { value: 2, label: 'Least Upvotes' },
+                { value: 3, label: 'Most Comments' },
+                { value: 4, label: 'Least Comments' },
+              ]}
+            />
           </Box>
 
-          <Button variant="contained" color="primary" startIcon={<AddIcon />}>
+          <Button
+            sx={{
+              width: '134px',
+              height: '40px',
+              fontSize: '13px',
+              borderRadius: '10px',
+            }}
+            variant="contained"
+            color="primary"
+            startIcon={<AddIcon />}
+          >
             Add Feedback
           </Button>
         </Box>

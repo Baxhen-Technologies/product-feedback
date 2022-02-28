@@ -2,6 +2,21 @@ import React from 'react';
 import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: [
+      '"Jost"',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   components: {
     MuiToggleButtonGroup: {
       styleOverrides: {
@@ -73,6 +88,10 @@ export const theme = createTheme({
 
           '& .MuiButton-startIcon > *:nth-of-type(1)': {
             fontSize: '1rem',
+          },
+          '& .MuiButton-startIcon': {
+            marginRight: '4px',
+            marginLeft: '-4px',
           },
         },
       },
