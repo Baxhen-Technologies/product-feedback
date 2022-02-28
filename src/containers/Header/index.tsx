@@ -105,7 +105,12 @@ export const Header: React.FC<Props> = () => {
         PaperProps={{ sx: { bottom: 0, top: 'auto', bgcolor: '#F7F8FD' } }}
         DrawerSx={{ height: '571px', position: 'initial' }}
       >
-        <Box width="271px" height="595px" padding="1.5rem">
+        <Box
+          width="271px"
+          height="595px"
+          padding="1.5rem"
+          data-testid="drawer-paper"
+        >
           <Box width="100%" height="11.125rem">
             <ToggleButtonGroup
               value={filterValue}
