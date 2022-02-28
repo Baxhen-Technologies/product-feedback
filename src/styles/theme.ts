@@ -26,6 +26,7 @@ export const theme = createTheme({
           border: 'none',
           backgroundColor: '#F2F4FF',
           color: '#4661E6',
+          textTransform: 'none',
         },
         selected: {
           color: 'white',
