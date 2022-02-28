@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import './styles.css';
 import Box from '@mui/material/Box';
 import {
+  Button,
   IconButton,
   ToggleButton,
   ToggleButtonGroup,
@@ -11,6 +12,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import AddIcon from '@mui/icons-material/Add';
 import Drawer from '../Drawer';
 
 interface Props {}
@@ -92,9 +94,17 @@ export const Header: React.FC<Props> = () => {
             sx={{ color: 'white' }}
           >
             {open ? (
-              <CloseIcon data-testid="close-icon" sx={{ color: 'white' }} />
+              <CloseIcon
+                data-testid="close-icon"
+                fontSize="large"
+                sx={{ color: 'white' }}
+              />
             ) : (
-              <MenuIcon data-testid="menu-icon" sx={{ color: 'white' }} />
+              <MenuIcon
+                data-testid="menu-icon"
+                fontSize="large"
+                sx={{ color: 'white' }}
+              />
             )}
           </IconButton>
         </Box>
@@ -131,7 +141,26 @@ export const Header: React.FC<Props> = () => {
           </Box>
         </Box>
       </Drawer>
-      <Outlet />
+      <Box>
+        <Box
+          width="100%"
+          height="3.5rem"
+          sx={{ bgcolor: '#373F68', padding: '0px 1.5rem' }}
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Box>
+            <label htmlFor="teste">Sort By : </label>
+            <select name="teste" id="" placeholder="Sort by"></select>
+          </Box>
+
+          <Button variant="contained" color="primary" startIcon={<AddIcon />}>
+            Add Feedback
+          </Button>
+        </Box>
+        <Outlet />
+      </Box>
     </Box>
   );
 };

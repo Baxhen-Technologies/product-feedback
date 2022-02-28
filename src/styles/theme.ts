@@ -27,6 +27,9 @@ export const theme = createTheme({
           backgroundColor: '#F2F4FF',
           color: '#4661E6',
           textTransform: 'none',
+          '&:hover': {
+            backgroundColor: '#CFD7FF',
+          },
         },
         selected: {
           color: 'white',
